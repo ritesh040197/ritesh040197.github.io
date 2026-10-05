@@ -87,23 +87,8 @@ h2{font-size:clamp(26px,3.4vw,34px);font-weight:800;letter-spacing:-.02em;margin
 .job li::before{content:"▹";position:absolute;left:0;color:var(--accent)}
 .job li b{color:var(--text);font-weight:600}
 
-/* research */
-.research{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
-.research figure{border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
-.research img{display:block;width:100%;height:auto}
-.research figcaption{font-size:13px;color:var(--muted);padding:10px 14px;background:var(--card)}
-.research h3{font-size:22px;font-weight:800;line-height:1.3;margin-bottom:8px}
-.authors{font-size:14px;color:var(--muted);margin-bottom:18px}
-.authors b{color:var(--text)}
-.points{list-style:none;margin:18px 0}
-.points li{display:flex;gap:12px;margin:12px 0;color:var(--muted)}
-.points li i{flex:none;font-style:normal;font-family:var(--mono);font-weight:600;color:var(--accent);min-width:54px}
-.bits{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px;font-family:var(--mono);font-size:12px}
-.bits span{border:1px solid var(--line);border-radius:6px;padding:4px 8px;color:var(--muted)}
-.bits span b{color:var(--accent)}
-
 /* projects */
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .proj{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;transition:transform .15s,border-color .15s}
 .proj:hover{transform:translateY(-4px);border-color:var(--accent)}
 .proj .ico{font-size:26px;margin-bottom:12px}
@@ -136,7 +121,7 @@ footer{padding:36px 0;text-align:center;color:var(--muted);font-size:13px;font-f
 .reveal.in{opacity:1;transform:none}
 
 @media (max-width:900px){
-  .hero .wrap,.research,.edu{grid-template-columns:1fr}
+  .hero .wrap,.edu{grid-template-columns:1fr}
   .stats{grid-template-columns:repeat(2,1fr)}
   .grid,.skills{grid-template-columns:1fr}
   .hero{padding:56px 0}
@@ -159,7 +144,6 @@ footer{padding:36px 0;text-align:center;color:var(--muted);font-size:13px;font-f
     <div class="links">
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
-      <a href="#research">Research</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </div>
@@ -260,31 +244,6 @@ footer{padding:36px 0;text-align:center;color:var(--muted);font-size:13px;font-f
   </div>
 </section>
 
-<section id="research">
-  <div class="wrap">
-    <div class="kicker">// research</div>
-    <h2>Research spotlight</h2>
-    <div class="research">
-      <figure class="reveal">
-        <img src="assets/metabit-poster.jpg" alt="Ritesh Yadav presenting the MetaBit research poster at Georgia State University">
-        <figcaption>Presenting MetaBit at the 4th Annual Graduate Conference for Research, Scholarship, and Creative Activity — Georgia State University, Feb 2026</figcaption>
-      </figure>
-      <div class="reveal">
-        <h3>MetaBit: Quantization-Driven Metagenomic Analysis for Memory-Efficient High-Throughput Profiling</h3>
-        <p class="authors">Mohammed Nayeem Uddin, Kamil Akhtar, <b>Ritesh Yadav</b>, Mohammed Alser · ALSER Research Lab</p>
-        <p style="color:var(--muted)">Metagenomic tools demand huge memory (NCBI RefSeq is ~4 TB; Kraken2 can use ~100 GB of RAM). MetaBit quantizes both reference genomes (FNA) and query reads (FASTQ) into fewer bits per base — a tool-independent way to shrink memory and speed up profiling.</p>
-        <div class="bits"><span>8-bit → <b>4-bit</b></span><span>→ <b>2-bit</b></span><span>→ <b>1-bit</b></span><span>3 quantization levels</span></div>
-        <ul class="points">
-          <li><i>57×</i><span>reduction in reference dataset size via a k-mer-based filtering methodology for CAMI benchmarks</span></li>
-          <li><i>4×</i><span>lower RefSeq storage with quantization</span></li>
-          <li><i>2 tools</i><span>evaluated with Metalign and Kraken2 on CAMI_LOW and CAMI_HIGH</span></li>
-        </ul>
-        <div class="chips"><span class="chip">Python</span><span class="chip">Metalign</span><span class="chip">Kraken2</span><span class="chip">HPC</span><span class="chip">Conda</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section id="projects">
   <div class="wrap">
     <div class="kicker">// projects</div>
@@ -297,6 +256,14 @@ footer{padding:36px 0;text-align:center;color:var(--muted);font-size:13px;font-f
         <p>A real-time news intelligence pipeline that ingests RSS feeds, categorizes market updates with local LLMs and scores mood indicators for options traders. A feedback loop turns user corrections into few-shot examples, improving accuracy without retraining.</p>
         <div class="chips"><span class="chip">Python</span><span class="chip">Ollama · Llama 3.2</span><span class="chip">Streamlit</span><span class="chip">Docker</span></div>
         <a class="more" href="https://github.com/ritesh040197/News_DashBoard_llm" target="_blank" rel="noopener">View on GitHub →</a>
+      </article>
+      <article class="proj reveal">
+        <div class="ico">🛡️</div>
+        <h3>Network Anomaly Detection System</h3>
+        <time>Machine learning · Network security</time>
+        <p>A desktop tool that captures live network traffic, extracts flow-level features with CICFlowMeter and classifies each flow with a trained Random Forest model to flag port scans. A Tkinter dashboard highlights the suspicious IPs.</p>
+        <div class="chips"><span class="chip">Python</span><span class="chip">PyShark</span><span class="chip">CICFlowMeter</span><span class="chip">scikit-learn</span><span class="chip">pandas</span><span class="chip">Tkinter</span></div>
+        <a class="more" href="https://github.com/ritesh040197/Network-Anomaly-System" target="_blank" rel="noopener">View on GitHub →</a>
       </article>
       <article class="proj reveal">
         <div class="ico">🚦</div>

@@ -5,7 +5,6 @@ A one-page portfolio built with plain HTML and CSS. It needs no build step.
 ## Files
 ```
 index.html                     the whole site
-assets/metabit-poster.jpg      photo of the research poster
 assets/og-banner.jpg           preview image shown when the link is shared
 assets/Ritesh_Yadav_Resume.pdf resume that the "Resume" button opens
 ```
