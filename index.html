@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ritesh Yadav — Software Engineer</title>
+<meta name="description" content="Ritesh Yadav — Software Engineer building scalable systems, from enterprise cloud automation serving 50M+ users to high-performance genomics pipelines.">
+<meta property="og:title" content="Ritesh Yadav — Software Engineer">
+<meta property="og:description" content="Engineering systems that scale — from 50M users to billions of DNA reads.">
+<meta property="og:image" content="assets/og-banner.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230d1117'/><text x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='700' font-size='28' fill='%237ee787'>RY</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117; --bg2:#161b22; --card:#161b22; --line:#30363d;
+  --text:#e6edf3; --muted:#8b949e; --accent:#7ee787; --accent2:#79c0ff; --warm:#ffc85a;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+:root[data-theme="light"]{
+  --bg:#fafaf7; --bg2:#f1f4ef; --card:#ffffff; --line:#e1e6df;
+  --text:#14202b; --muted:#5d6a74; --accent:#2e7d46; --accent2:#2f6fc4; --warm:#b7791f;
+  --shadow:0 10px 30px rgba(20,32,43,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.mono{font-family:var(--mono)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:color-mix(in srgb,var(--bg) 80%,transparent);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--mono);font-weight:600;color:var(--accent)}
+.logo span{color:var(--muted)}
+.links{display:flex;gap:26px;align-items:center;font-size:14px;color:var(--muted)}
+.links a:hover{color:var(--text)}
+.theme{background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:16px}
+.menu{display:none}
+
+/* hero */
+.hero{padding:88px 0 72px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,transparent);padding:6px 12px;border-radius:999px;margin-bottom:20px}
+h1{font-size:clamp(32px,4.2vw,46px);line-height:1.08;font-weight:800;letter-spacing:-.02em}
+h1 em{font-style:normal;color:var(--accent)}
+.lead{margin-top:20px;font-size:18px;color:var(--muted);max-width:540px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:10px;font-weight:600;font-size:15px;border:1px solid var(--line);transition:transform .15s,border-color .15s}
+.btn:hover{transform:translateY(-2px);border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.btn svg{width:18px;height:18px}
+
+.term{background:var(--bg2);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);overflow:hidden;font-family:var(--mono);font-size:13.5px}
+.term .bar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--bg2) 70%,var(--line))}
+.dot{width:12px;height:12px;border-radius:50%}
+.term .title{margin-left:auto;margin-right:auto;color:var(--muted);font-size:12px;transform:translateX(-24px)}
+.term pre{padding:20px 22px;white-space:pre-wrap;line-height:1.75}
+.p{color:var(--accent);font-weight:600}.c{color:var(--muted)}.n{color:var(--warm);font-weight:600}.u{color:var(--accent2)}
+.cursor{display:inline-block;width:8px;height:16px;background:var(--accent);vertical-align:-3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.stat b{display:block;font-size:34px;font-weight:800;color:var(--accent);letter-spacing:-.02em}
+.stat span{color:var(--muted);font-size:14px}
+
+/* sections */
+section{padding:72px 0}
+.kicker{font-family:var(--mono);color:var(--accent);font-size:13px;margin-bottom:8px}
+h2{font-size:clamp(26px,3.4vw,34px);font-weight:800;letter-spacing:-.02em;margin-bottom:28px}
+.about p{font-size:17px;color:var(--muted);max-width:760px;margin-bottom:14px}
+.about p strong{color:var(--text);font-weight:600}
+
+/* timeline */
+.tl{position:relative;padding-left:28px}
+.tl::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.job{position:relative;margin-bottom:28px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px}
+.job::before{content:"";position:absolute;left:-28px;top:28px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.job header{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;margin-bottom:10px}
+.job h3{font-size:18px;font-weight:700}
+.job h3 small{font-weight:500;color:var(--muted);font-size:15px}
+.job time{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.job ul{list-style:none;color:var(--muted);font-size:15px}
+.job li{position:relative;padding-left:20px;margin:6px 0}
+.job li::before{content:"▹";position:absolute;left:0;color:var(--accent)}
+.job li b{color:var(--text);font-weight:600}
+
+/* research */
+.research{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+.research figure{border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
+.research img{display:block;width:100%;height:auto}
+.research figcaption{font-size:13px;color:var(--muted);padding:10px 14px;background:var(--card)}
+.research h3{font-size:22px;font-weight:800;line-height:1.3;margin-bottom:8px}
+.authors{font-size:14px;color:var(--muted);margin-bottom:18px}
+.authors b{color:var(--text)}
+.points{list-style:none;margin:18px 0}
+.points li{display:flex;gap:12px;margin:12px 0;color:var(--muted)}
+.points li i{flex:none;font-style:normal;font-family:var(--mono);font-weight:600;color:var(--accent);min-width:54px}
+.bits{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px;font-family:var(--mono);font-size:12px}
+.bits span{border:1px solid var(--line);border-radius:6px;padding:4px 8px;color:var(--muted)}
+.bits span b{color:var(--accent)}
+
+/* projects */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.proj{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;transition:transform .15s,border-color .15s}
+.proj:hover{transform:translateY(-4px);border-color:var(--accent)}
+.proj .ico{font-size:26px;margin-bottom:12px}
+.proj h3{font-size:18px;font-weight:700;margin-bottom:4px}
+.proj time{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.proj p{color:var(--muted);font-size:15px;margin:12px 0 16px;flex:1}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-family:var(--mono);font-size:12px;padding:4px 10px;border-radius:999px;background:color-mix(in srgb,var(--accent) 10%,transparent);color:var(--accent)}
+.proj a.more{margin-top:16px;font-size:14px;font-weight:600;color:var(--accent2)}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.sk{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.sk h4{font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+
+/* education */
+.edu{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.edu div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.edu h3{font-size:17px;font-weight:700}
+.edu p{color:var(--muted);font-size:15px}
+.edu .gpa{display:inline-block;margin-top:10px;font-family:var(--mono);font-size:13px;color:var(--accent)}
+
+/* contact */
+.contact{text-align:center;background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:56px 24px}
+.contact p{color:var(--muted);max-width:520px;margin:0 auto 26px;font-size:17px}
+.contact .cta{justify-content:center}
+footer{padding:36px 0;text-align:center;color:var(--muted);font-size:13px;font-family:var(--mono)}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:900px){
+  .hero .wrap,.research,.edu{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .grid,.skills{grid-template-columns:1fr}
+  .hero{padding:56px 0}
+}
+@media (max-width:640px){
+  .wrap{padding:0 16px}
+  .links a{display:none}
+  .term{font-size:12px}
+  .stat b{font-size:28px}
+  section{padding:56px 0}
+}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.cursor{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="logo">ritesh<span>.yadav</span></a>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#research">Research</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <button class="theme" id="theme" aria-label="Toggle light and dark theme">☀</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="tag">SOFTWARE ENGINEER · ATLANTA, GA</span>
+      <h1>Engineering systems that scale — from <em>50M users</em> to <em>billions of DNA reads.</em></h1>
+      <p class="lead">I'm Ritesh Yadav. I build automation, APIs and data pipelines that make slow, manual systems fast — across enterprise hybrid cloud and high-performance genomics.</p>
+      <div class="cta">
+        <a class="btn primary" href="assets/Ritesh_Yadav_Resume.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>Resume</a>
+        <a class="btn" href="https://github.com/ritesh040197" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>GitHub</a>
+        <a class="btn" href="https://linkedin.com/in/ritesh-yadav-engineer" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>LinkedIn</a>
+      </div>
+    </div>
+    <div class="term" aria-label="Terminal summary">
+      <div class="bar"><span class="dot" style="background:#ff5f56"></span><span class="dot" style="background:#ffbd2e"></span><span class="dot" style="background:#27c93f"></span><span class="title">ritesh@yadav: ~</span></div>
+<pre><span class="p">$</span> whoami
+<b>Ritesh Yadav</b> <span class="c">// Software Engineer</span>
+
+<span class="p">$</span> cat impact.log
+  <span class="p">✓</span> <span class="n">4×  </span> faster genomic profiling
+  <span class="p">✓</span> <span class="n">1M+ </span> manual hours automated
+  <span class="p">✓</span> <span class="n">50M+</span> users served by my APIs
+  <span class="p">✓</span> <span class="n">70% </span> fewer production incidents
+
+<span class="p">$</span> status
+  <span class="c">MS CS @ Georgia State · grad Dec 2026</span>
+  <span class="u">open to SWE roles</span> <span class="cursor"></span></pre>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats reveal">
+    <div class="stat"><b>5 yrs</b><span>industry experience</span></div>
+    <div class="stat"><b>1M+</b><span>manual hours automated per year</span></div>
+    <div class="stat"><b>50K+</b><span>endpoints &amp; VMs automated</span></div>
+    <div class="stat"><b>4.13</b><span>MS Computer Science GPA</span></div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap about reveal">
+    <div class="kicker">// about</div>
+    <h2>Building fast, reliable systems</h2>
+    <p>I spent five years in industry building <strong>automation, REST APIs and CI/CD pipelines</strong> for enterprise hybrid-cloud platforms — work that eliminated over a million manual hours a year and served infrastructure behind 50M+ users across telecom, banking and manufacturing.</p>
+    <p>Today I'm pursuing an <strong>MS in Computer Science at Georgia State University</strong> and doing research at the <strong>Alser Lab</strong>, where I make metagenomic analysis faster and more memory-efficient — re-architecting bioinformatics tools for concurrency and packaging reproducible pipelines for HPC clusters.</p>
+    <p>I like problems where performance, reliability and scale actually matter, and I enjoy turning slow, manual workflows into code.</p>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="kicker">// experience</div>
+    <h2>Where I've worked</h2>
+    <div class="tl">
+      <article class="job reveal">
+        <header><h3>Volunteer Researcher <small>· Alser Lab, Georgia State University</small></h3><time>Oct 2025 – Present</time></header>
+        <ul>
+          <li>Accelerated Metalign bioinformatics profiling <b>4× (400%)</b> by re-architecting single-threaded routines into concurrent multi-threaded Python.</li>
+          <li>Engineered reproducible 3-step pipelines packaging <b>Kraken, Metalign and QIIME</b> with Conda for laptops and HPC clusters.</li>
+        </ul>
+      </article>
+      <article class="job reveal">
+        <header><h3>Graduate Assistant <small>· Georgia State University</small></h3><time>May 2025 – Present</time></header>
+        <ul>
+          <li>Optimized digital marketing acquisition across <b>5 university microsites</b> using Python analytics on paid campaign traffic.</li>
+          <li>Designed an interactive <b>Power BI dashboard</b> delivering real-time program metrics to the marketing team.</li>
+        </ul>
+      </article>
+      <article class="job reveal">
+        <header><h3>Software Engineer <small>· Vyom Labs, Pune</small></h3><time>Mar 2021 – Jun 2023</time></header>
+        <ul>
+          <li>Eliminated <b>1,000,000+ annual manual hours</b> with Python and Shell automation integrated into GitLab CI/CD, speeding builds by <b>200%</b>.</li>
+          <li>Architected high-throughput microservice REST APIs connecting ServiceNow with BMC TSSA — <b>3,000+ weekly requests</b> across 50,000+ endpoints serving <b>50M+ users</b>.</li>
+          <li>Boosted query speed by <b>60%</b> with automated maintenance routines on PostgreSQL, Oracle DB and SQL Server.</li>
+          <li>Hardened security for <b>10,000+ hybrid endpoints</b> with LDAP, RBAC and automated patching pipelines meeting SOC standards.</li>
+          <li>Led technical pre-sales demos and mentored <b>10+ junior engineers</b>, achieving 90% on-time delivery across AWS, GCP and Azure.</li>
+        </ul>
+      </article>
+      <article class="job reveal">
+        <header><h3>Consultant <small>· Ezmata Technologies, Pune</small></h3><time>Aug 2018 – Mar 2021</time></header>
+        <ul>
+          <li>Scaled virtualized enterprise infrastructure to <b>50,000+ VMs</b> with custom JavaScript workflows in VMware vRealize Automation.</li>
+          <li>Secured <b>3 enterprise contracts</b> by leading proof-of-concept architecture demos with 20+ person cross-functional teams.</li>
+          <li>Cut production incidents by <b>70%</b> with dry-run pre-flight validation and automated static analysis (Pester, ShellCheck).</li>
+          <li>Standardized change management with structured documentation and staged rollouts across telecom, banking and manufacturing.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="wrap">
+    <div class="kicker">// research</div>
+    <h2>Research spotlight</h2>
+    <div class="research">
+      <figure class="reveal">
+        <img src="assets/metabit-poster.jpg" alt="Ritesh Yadav presenting the MetaBit research poster at Georgia State University">
+        <figcaption>Presenting MetaBit at the 4th Annual Graduate Conference for Research, Scholarship, and Creative Activity — Georgia State University, Feb 2026</figcaption>
+      </figure>
+      <div class="reveal">
+        <h3>MetaBit: Quantization-Driven Metagenomic Analysis for Memory-Efficient High-Throughput Profiling</h3>
+        <p class="authors">Mohammed Nayeem Uddin, Kamil Akhtar, <b>Ritesh Yadav</b>, Mohammed Alser · ALSER Research Lab</p>
+        <p style="color:var(--muted)">Metagenomic tools demand huge memory (NCBI RefSeq is ~4 TB; Kraken2 can use ~100 GB of RAM). MetaBit quantizes both reference genomes (FNA) and query reads (FASTQ) into fewer bits per base — a tool-independent way to shrink memory and speed up profiling.</p>
+        <div class="bits"><span>8-bit → <b>4-bit</b></span><span>→ <b>2-bit</b></span><span>→ <b>1-bit</b></span><span>3 quantization levels</span></div>
+        <ul class="points">
+          <li><i>57×</i><span>reduction in reference dataset size via a k-mer-based filtering methodology for CAMI benchmarks</span></li>
+          <li><i>4×</i><span>lower RefSeq storage with quantization</span></li>
+          <li><i>2 tools</i><span>evaluated with Metalign and Kraken2 on CAMI_LOW and CAMI_HIGH</span></li>
+        </ul>
+        <div class="chips"><span class="chip">Python</span><span class="chip">Metalign</span><span class="chip">Kraken2</span><span class="chip">HPC</span><span class="chip">Conda</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="kicker">// projects</div>
+    <h2>Things I've built</h2>
+    <div class="grid">
+      <article class="proj reveal">
+        <div class="ico">📈</div>
+        <h3>Market News Intelligence Dashboard</h3>
+        <time>Jan 2026 – Sep 2026</time>
+        <p>A real-time news intelligence pipeline that ingests RSS feeds, categorizes market updates with local LLMs and scores mood indicators for options traders. A feedback loop turns user corrections into few-shot examples, improving accuracy without retraining.</p>
+        <div class="chips"><span class="chip">Python</span><span class="chip">Ollama · Llama 3.2</span><span class="chip">Streamlit</span><span class="chip">Docker</span></div>
+        <a class="more" href="https://github.com/ritesh040197" target="_blank" rel="noopener">View on GitHub →</a>
+      </article>
+      <article class="proj reveal">
+        <div class="ico">🧬</div>
+        <h3>Reproducible Metagenomics Pipelines</h3>
+        <time>Oct 2025 – Present</time>
+        <p>A 3-step pipeline architecture packaging Kraken, Metalign and QIIME with Conda so the same analysis runs on a laptop or an HPC cluster — plus a multi-threaded rewrite that made Metalign profiling 4× faster.</p>
+        <div class="chips"><span class="chip">Python</span><span class="chip">Conda</span><span class="chip">HPC</span><span class="chip">Concurrency</span></div>
+        <a class="more" href="https://github.com/ritesh040197" target="_blank" rel="noopener">View on GitHub →</a>
+      </article>
+      <article class="proj reveal">
+        <div class="ico">🚦</div>
+        <h3>Traffic Sign Robustness Study</h3>
+        <time>Jan 2025 – Apr 2025</time>
+        <p>Trained and evaluated CNN and Spatial Transformer models across 9 image-degradation scenarios to benchmark how robust computer-vision models are under real-world noise.</p>
+        <div class="chips"><span class="chip">TensorFlow/Keras</span><span class="chip">OpenCV</span><span class="chip">scikit-learn</span></div>
+        <a class="more" href="https://github.com/ritesh040197" target="_blank" rel="noopener">View on GitHub →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="kicker">// skills</div>
+    <h2>Toolbox</h2>
+    <div class="skills">
+      <div class="sk reveal"><h4>Languages</h4><div class="chips"><span class="chip">Python</span><span class="chip">Go</span><span class="chip">C/C++</span><span class="chip">JavaScript</span><span class="chip">Shell</span><span class="chip">PowerShell</span><span class="chip">YAML</span></div></div>
+      <div class="sk reveal"><h4>Systems &amp; Cloud</h4><div class="chips"><span class="chip">Distributed Systems</span><span class="chip">Microservices</span><span class="chip">REST APIs</span><span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">AWS EC2</span><span class="chip">GCP</span><span class="chip">Azure</span><span class="chip">VMware vRealize</span></div></div>
+      <div class="sk reveal"><h4>DevOps &amp; Security</h4><div class="chips"><span class="chip">CI/CD</span><span class="chip">GitLab</span><span class="chip">PyTest</span><span class="chip">ShellCheck</span><span class="chip">LDAP</span><span class="chip">RBAC</span><span class="chip">ServiceNow</span><span class="chip">BMC TSSA</span></div></div>
+      <div class="sk reveal"><h4>Data</h4><div class="chips"><span class="chip">PostgreSQL</span><span class="chip">Oracle DB</span><span class="chip">SQL Server</span><span class="chip">Power BI</span></div></div>
+      <div class="sk reveal"><h4>ML &amp; AI</h4><div class="chips"><span class="chip">TensorFlow</span><span class="chip">OpenCV</span><span class="chip">scikit-learn</span><span class="chip">Local LLMs (Ollama)</span></div></div>
+      <div class="sk reveal"><h4>Bioinformatics</h4><div class="chips"><span class="chip">Metalign</span><span class="chip">Kraken2</span><span class="chip">QIIME</span><span class="chip">HPC</span><span class="chip">Conda</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="kicker">// education</div>
+    <h2>Education</h2>
+    <div class="edu">
+      <div class="reveal"><h3>Master of Science in Computer Science</h3><p>Georgia State University · Atlanta, GA · Expected Dec 2026</p><span class="gpa">GPA 4.13 / 4.00</span></div>
+      <div class="reveal"><h3>Bachelor of Technology in Computer Science</h3><p>College of Engineering Roorkee · Roorkee, India</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact reveal">
+      <div class="kicker">// contact</div>
+      <h2>Let's build something that scales</h2>
+      <p>I'm graduating in December 2026 and open to software engineering roles. My inbox is always open.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:riteshyadav4@gmail.com">✉ riteshyadav4@gmail.com</a>
+        <a class="btn" href="https://linkedin.com/in/ritesh-yadav-engineer" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/ritesh040197" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© <span id="yr">2026</span> Ritesh Yadav · built with plain HTML &amp; CSS · hosted on GitHub Pages</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('theme');
+  function set(t){root.setAttribute('data-theme',t);btn.textContent=t==='light'?'☾':'☀';try{localStorage.setItem('theme',t)}catch(e){}}
+  var saved=null;try{saved=localStorage.getItem('theme')}catch(e){}
+  set(saved||(window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'));
+  btn.addEventListener('click',function(){set(root.getAttribute('data-theme')==='light'?'dark':'light')});
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+    els.forEach(function(el){io.observe(el)});
+  } else els.forEach(function(el){el.classList.add('in')});
+})();
+</script>
+</body>
+</html>
