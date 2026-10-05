@@ -1,6 +1,6 @@
 # Ritesh Yadav — Portfolio
 
-A one-page portfolio built with plain HTML and CSS. It needs no build step and has dark and light themes.
+A one-page portfolio built with plain HTML and CSS. It needs no build step.
 
 ## Files
 ```
@@ -27,6 +27,6 @@ git push -u origin main
 ```
 
 ## Things to update
-- **Project links:** each "View on GitHub →" link currently goes to your GitHub profile. Point them at the actual repos (search `index.html` for `View on GitHub`).
+- **Project links:** the two project cards link to their repos. Update the links if you rename a repo.
 - **Resume:** replace `assets/Ritesh_Yadav_Resume.pdf` with a newer version, keeping the same file name.
 - **Colors:** edit the `--accent` values at the top of the `<style>` block.

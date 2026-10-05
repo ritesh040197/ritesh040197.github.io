@@ -16,15 +16,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0d1117; --bg2:#161b22; --card:#161b22; --line:#30363d;
-  --text:#e6edf3; --muted:#8b949e; --accent:#7ee787; --accent2:#79c0ff; --warm:#ffc85a;
-  --shadow:0 10px 30px rgba(0,0,0,.35);
-  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
-}
-:root[data-theme="light"]{
   --bg:#fafaf7; --bg2:#f1f4ef; --card:#ffffff; --line:#e1e6df;
   --text:#14202b; --muted:#5d6a74; --accent:#2e7d46; --accent2:#2f6fc4; --warm:#b7791f;
   --shadow:0 10px 30px rgba(20,32,43,.08);
+  color-scheme:light;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -40,7 +36,6 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .logo span{color:var(--muted)}
 .links{display:flex;gap:26px;align-items:center;font-size:14px;color:var(--muted)}
 .links a:hover{color:var(--text)}
-.theme{background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:16px}
 .menu{display:none}
 
 /* hero */
@@ -108,7 +103,7 @@ h2{font-size:clamp(26px,3.4vw,34px);font-weight:800;letter-spacing:-.02em;margin
 .bits span b{color:var(--accent)}
 
 /* projects */
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
 .proj{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;transition:transform .15s,border-color .15s}
 .proj:hover{transform:translateY(-4px);border-color:var(--accent)}
 .proj .ico{font-size:26px;margin-bottom:12px}
@@ -167,7 +162,6 @@ footer{padding:36px 0;text-align:center;color:var(--muted);font-size:13px;font-f
       <a href="#research">Research</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
-      <button class="theme" id="theme" aria-label="Toggle light and dark theme">☀</button>
     </div>
   </div>
 </nav>
@@ -302,15 +296,7 @@ footer{padding:36px 0;text-align:center;color:var(--muted);font-size:13px;font-f
         <time>Jan 2026 – Sep 2026</time>
         <p>A real-time news intelligence pipeline that ingests RSS feeds, categorizes market updates with local LLMs and scores mood indicators for options traders. A feedback loop turns user corrections into few-shot examples, improving accuracy without retraining.</p>
         <div class="chips"><span class="chip">Python</span><span class="chip">Ollama · Llama 3.2</span><span class="chip">Streamlit</span><span class="chip">Docker</span></div>
-        <a class="more" href="https://github.com/ritesh040197" target="_blank" rel="noopener">View on GitHub →</a>
-      </article>
-      <article class="proj reveal">
-        <div class="ico">🧬</div>
-        <h3>Reproducible Metagenomics Pipelines</h3>
-        <time>Oct 2025 – Present</time>
-        <p>A 3-step pipeline architecture packaging Kraken, Metalign and QIIME with Conda so the same analysis runs on a laptop or an HPC cluster — plus a multi-threaded rewrite that made Metalign profiling 4× faster.</p>
-        <div class="chips"><span class="chip">Python</span><span class="chip">Conda</span><span class="chip">HPC</span><span class="chip">Concurrency</span></div>
-        <a class="more" href="https://github.com/ritesh040197" target="_blank" rel="noopener">View on GitHub →</a>
+        <a class="more" href="https://github.com/ritesh040197/News_DashBoard_llm" target="_blank" rel="noopener">View on GitHub →</a>
       </article>
       <article class="proj reveal">
         <div class="ico">🚦</div>
@@ -318,7 +304,7 @@ footer{padding:36px 0;text-align:center;color:var(--muted);font-size:13px;font-f
         <time>Jan 2025 – Apr 2025</time>
         <p>Trained and evaluated CNN and Spatial Transformer models across 9 image-degradation scenarios to benchmark how robust computer-vision models are under real-world noise.</p>
         <div class="chips"><span class="chip">TensorFlow/Keras</span><span class="chip">OpenCV</span><span class="chip">scikit-learn</span></div>
-        <a class="more" href="https://github.com/ritesh040197" target="_blank" rel="noopener">View on GitHub →</a>
+        <a class="more" href="https://github.com/ritesh040197/Traffic--Sign-robustness" target="_blank" rel="noopener">View on GitHub →</a>
       </article>
     </div>
   </div>
@@ -369,11 +355,6 @@ footer{padding:36px 0;text-align:center;color:var(--muted);font-size:13px;font-f
 
 <script>
 (function(){
-  var root=document.documentElement, btn=document.getElementById('theme');
-  function set(t){root.setAttribute('data-theme',t);btn.textContent=t==='light'?'☾':'☀';try{localStorage.setItem('theme',t)}catch(e){}}
-  var saved=null;try{saved=localStorage.getItem('theme')}catch(e){}
-  set(saved||(window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'));
-  btn.addEventListener('click',function(){set(root.getAttribute('data-theme')==='light'?'dark':'light')});
   document.getElementById('yr').textContent=new Date().getFullYear();
   var els=document.querySelectorAll('.reveal');
   if('IntersectionObserver' in window){
